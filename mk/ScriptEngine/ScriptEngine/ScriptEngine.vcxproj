@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F99E60ED-4073-4CB2-A9CC-FA4528E133D7}</ProjectGuid>
+    <RootNamespace>ScriptEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>../../../include/ScriptEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\ScriptEngine\LuaArray.cpp" />
+    <ClCompile Include="..\..\..\src\ScriptEngine\LuaPointer.cpp" />
+    <ClCompile Include="..\..\..\src\ScriptEngine\LuaScript.cpp" />
+    <ClCompile Include="..\..\..\src\ScriptEngine\ScriptEngine.cpp" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lapi.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lauxlib.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lbaselib.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lcode.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\ldblib.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\ldebug.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\ldo.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\ldump.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lfunc.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lgc.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\linit.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\liolib.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\llex.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lmathlib.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lmem.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\loadlib.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lobject.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lopcodes.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\loslib.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lparser.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lstate.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lstring.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lstrlib.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\ltable.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\ltablib.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\ltm.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lundump.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lvm.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\lzio.c" />
+    <ClCompile Include="..\..\..\include\ScriptEngine\print.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\ScriptEngine\LuaArray.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\LuaClass.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\LuaConfig.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\LuaFunction.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\LuaPackage.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\LuaPointer.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\LuaProxy.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\LuaScript.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\LuaTable.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\ScriptEngine.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lapi.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lauxlib.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lcode.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\ldebug.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\ldo.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lfunc.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lgc.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\llex.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\llimits.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lmem.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lobject.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lopcodes.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lparser.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lstate.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lstring.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\ltable.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\ltm.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lua.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lua.hpp" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\luaconf.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lualib.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lundump.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lvm.h" />
+    <ClInclude Include="..\..\..\include\ScriptEngine\lzio.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

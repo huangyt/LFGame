@@ -1,12 +1,34 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
+*.sdf
+*.suo
+*.user
+*.ilk
+*.pdb
 
-# Compiled Dynamic libraries
-*.so
+/mk/Demo/ClientDemo/ipch
+/mk/Demo/ClientDemo/ClientDemo/Debug
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+/mk/Demo/EngineDemo/EngineDemo/Debug
+
+/mk/Demo/LuaScriptDemo/ipch
+/mk/Demo/LuaScriptDemo/LuaScriptDemo/Debug
+
+/mk/Demo/ServerDemo/ipch
+/mk/Demo/ServerDemo/ServerDemo/Debug
+
+/mk/LFEngine/LFEngine/Debug
+
+/mk/LFServerLib/ipch
+/mk/LFServerLib/LFServerLib/Debug
+
+/mk/ScriptEngine/ipch
+/mk/ScriptEngine/ScriptEngine/Debug
+
+/bin/Logs
+/bin/ClientDemo_d.exe
+/bin/EngineDemo_d.exe
+/bin/LFEngine_d.lib
+/bin/LFServerLib_d.lib
+/bin/LoginServer_d.exe
+/bin/LuaScriptDemo_d.exe
+/bin/ScriptEngine_d.lib
+/bin/msyh.ttf

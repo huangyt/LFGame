@@ -1,0 +1,4 @@
+数据库划分：
+LoginDatabase : 记录账户密码等信息
+CharacterDatabase : 记录角色的一切信息
+WorldDatabase : 记录游戏场景的一切信息

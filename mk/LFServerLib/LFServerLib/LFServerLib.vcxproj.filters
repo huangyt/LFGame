@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="网络通信">
+      <UniqueIdentifier>{aafaf4a2-03e9-42b3-9a03-f5bdecdb2f4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="定时器">
+      <UniqueIdentifier>{e0ef0346-d4ed-4777-8d6d-ab215495f87b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="数据库">
+      <UniqueIdentifier>{303188d9-be34-4155-ab6a-dcad5fc66606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="多线程">
+      <UniqueIdentifier>{4a6c6246-977c-44d5-8300-7f2b613ac62b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基础模块">
+      <UniqueIdentifier>{17fc0d56-d547-4216-a21f-594afbaa7e0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="日志">
+      <UniqueIdentifier>{ecd48fd7-e1fd-4a14-ade1-057d904b1ced}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="时间管理">
+      <UniqueIdentifier>{7e3ae09b-03dd-44b7-b814-582edd54ef77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="调度">
+      <UniqueIdentifier>{15bff7ec-09ad-4daf-a684-68d6aad5d209}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="数据存储">
+      <UniqueIdentifier>{3229a75b-5d42-4c28-8494-f275b4e2f46f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="加密">
+      <UniqueIdentifier>{64e1b478-5f3f-4260-9610-3ad1321c42dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="内存池">
+      <UniqueIdentifier>{b0ba96a8-f0a7-4ef4-8d19-7541b37ebe77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="队列服务">
+      <UniqueIdentifier>{7115c4c8-ac63-4d0e-a3ea-3d4ff480b438}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="字符串处理">
+      <UniqueIdentifier>{f96be761-1829-42f9-adbf-d3888ac11659}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\LFServerLib\SocketEngine.h">
+      <Filter>网络通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\TcpSocket.h">
+      <Filter>网络通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\TimerEngine.h">
+      <Filter>定时器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\GlobalDef.h">
+      <Filter>基础模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\ByteBuffer.h">
+      <Filter>基础模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\Factory.h">
+      <Filter>基础模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\Singleton.h">
+      <Filter>基础模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\DataBaseEngine.h">
+      <Filter>数据库</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\ServiceThread.h">
+      <Filter>多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\LogEngine.h">
+      <Filter>日志</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\SystemTime.h">
+      <Filter>时间管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\AsynchronismEngine.h">
+      <Filter>调度</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\AttemperEngine.h">
+      <Filter>调度</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\DataStorage.h">
+      <Filter>数据存储</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\QueueService.h">
+      <Filter>队列服务</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\FormatString.h">
+      <Filter>字符串处理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\AuthCrypt.h">
+      <Filter>加密</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\BigNumber.h">
+      <Filter>加密</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\LFServerLib\TcpSocket.cpp">
+      <Filter>网络通信</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\SocketEngine.cpp">
+      <Filter>网络通信</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\TimerEngine.cpp">
+      <Filter>定时器</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\DataBaseEngine.cpp">
+      <Filter>数据库</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\ServiceThread.cpp">
+      <Filter>多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\LogEngine.cpp">
+      <Filter>日志</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\SystemTime.cpp">
+      <Filter>时间管理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\AsynchronismEngine.cpp">
+      <Filter>调度</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\AttemperEngine.cpp">
+      <Filter>调度</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\DataStorage.cpp">
+      <Filter>数据存储</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\QueueService.cpp">
+      <Filter>队列服务</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\FormatString.cpp">
+      <Filter>字符串处理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\AuthCrypt.cpp">
+      <Filter>加密</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\BigNumber.cpp">
+      <Filter>加密</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
