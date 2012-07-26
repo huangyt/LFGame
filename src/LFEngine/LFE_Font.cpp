@@ -90,7 +90,6 @@ namespace LF
 					pos.X+node->_nOffSetX+m_nCharWidth, pos.Y+node->_nOffSetY+m_nCharHeight));
 				quad.setZBuffer(z);
 				quad.pTex = m_pFontTex;
-				quad.blend = BLEND_DEFAULT_Z;
 
 				int nX = node->_nX*(m_nCharWidth+CHAR_SPACE);
 				int nY = node->_nY*(m_nCharHeight+CHAR_SPACE);

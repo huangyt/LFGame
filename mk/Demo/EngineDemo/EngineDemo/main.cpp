@@ -83,14 +83,13 @@ BOOL RenderFunc()
 	rect_f rect;
 	rect.UpperLeftCorner.X = nX;
 	rect.UpperLeftCorner.Y = nY;
-	rect.LowerRightCorner.X = nX + pTexture->GetWidth(TRUE);
-	rect.LowerRightCorner.Y = nY + pTexture->GetHeight(TRUE);
+	rect.LowerRightCorner.X = nX + pTarget->GetTexture()->GetWidth();
+	rect.LowerRightCorner.Y = nY + pTarget->GetTexture()->GetHeight();
 
 	Quad a;
 	a.setQuadRect(&rect);
 	a.setZBuffer(0.0f);
-	a.pTex = pTarget->GetTexture();//pTexture;
-	a.blend = BLEND_DEFAULT_Z;
+	a.pTex = pTarget->GetTexture();
 	pVideo->RenderQuad(&a);
 
 	if(pFont)

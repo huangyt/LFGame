@@ -10,6 +10,8 @@ namespace LF
 	{
 		m_pDepth = NULL;
 		m_pLFETexture = NULL;
+		m_nWidth = 0;
+		m_nHeight = 0;
 	}
 
 	CLFE_Target::~CLFE_Target()

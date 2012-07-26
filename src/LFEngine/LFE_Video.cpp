@@ -371,7 +371,7 @@ namespace LF
 			m_pVertexArray[i].z     = m_pVertexArray[i+1].z = fZ;
 			m_pVertexArray[i].color = m_pVertexArray[i+1].color = color;
 			m_pVertexArray[i].tx    = m_pVertexArray[i+1].tx =
-				m_pVertexArray[i].ty    = m_pVertexArray[i+1].ty = 0.0f;
+			m_pVertexArray[i].ty    = m_pVertexArray[i+1].ty = 0.0f;
 
 			m_nPrims++;
 		}
@@ -952,6 +952,10 @@ namespace LF
 		}
 
 		m_pCurTexture = NULL;
+
+		m_pD3DDevice->SetTransform(D3DTS_VIEW, &m_matView);
+		m_pD3DDevice->SetTransform(D3DTS_PROJECTION, &m_matProj);
+
 		return TRUE;
 	}
 

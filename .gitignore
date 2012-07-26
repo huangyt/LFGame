@@ -3,10 +3,12 @@
 *.user
 *.ilk
 *.pdb
+*.ttf
 
 /mk/Demo/ClientDemo/ipch
 /mk/Demo/ClientDemo/ClientDemo/Debug
 
+/mk/Demo/EngineDemo/ipch
 /mk/Demo/EngineDemo/EngineDemo/Debug
 
 /mk/Demo/LuaScriptDemo/ipch
@@ -31,4 +33,3 @@
 /bin/LoginServer_d.exe
 /bin/LuaScriptDemo_d.exe
 /bin/ScriptEngine_d.lib
-/bin/msyh.ttf

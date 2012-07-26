@@ -28,9 +28,6 @@
     <Filter Include="字符串处理">
       <UniqueIdentifier>{bede6b8d-dceb-4676-9e0a-ad037274772d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="UI">
-      <UniqueIdentifier>{b7f5aba6-b621-4a18-b03c-649e78c7131e}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\LFEngine\LFEngine.h">
