@@ -13,6 +13,9 @@
 //引擎用回调函数定义
 typedef BOOL (*lfeCallback)();
 
+//引擎窗口消息回调函数定义，返回TRUE时，引擎内部忽略该消息
+typedef BOOL (*lfeMsgProcCallback)(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
 //枚举类型
 enum LOG_TYPE
 {

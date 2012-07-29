@@ -134,6 +134,11 @@ BOOL InitFunc()
 	return TRUE;
 }
 
+BOOL MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+	return FALSE;
+}
+
 INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int)
 {
 #ifdef _DEBUG
@@ -151,6 +156,8 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int)
 		pEngine->SetState(LFE_RENDERFUNC, RenderFunc);
 		pEngine->SetState(LFE_EXITFUNC, ExitFunc);
 		//pEngine->SetState(LFE_VRESTOREFUNC, VideoRestore);
+
+		pEngine->SetMsgProcCallback(MsgProc);
 
 		pEngine->SetState(LFE_WINDOWED, TRUE);
 		pEngine->SetState(LFE_SCREENWIDTH, 800);

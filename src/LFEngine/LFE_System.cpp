@@ -75,13 +75,15 @@ namespace LF
 		m_bRenderRun = FALSE;
 		m_hRenderThread = NULL;
 
-		procInitFunc			= NULL;
-		procExitFunc			= NULL;
-		procFrameFunc			= NULL;
-		procRenderFunc			= NULL;
-		prceFocusLostFunc		= NULL;
-		procFocusGainFunc		= NULL;
-		procVideoRestoreFunc	= NULL;
+		m_procInitFunc			= NULL;
+		m_procExitFunc			= NULL;
+		m_procFrameFunc			= NULL;
+		m_procRenderFunc		= NULL;
+		m_prceFocusLostFunc		= NULL;
+		m_procFocusGainFunc		= NULL;
+		m_procVideoRestoreFunc	= NULL;
+
+		m_lpMsgProcCallback = NULL;
 
 		m_pVideo		= NULL;
 		m_pInput		= NULL;
@@ -222,19 +224,19 @@ namespace LF
 		}
 		ShowWindow(pSystem->m_hWnd, SW_SHOW);
 
-		if(pSystem->procInitFunc)
+		if(pSystem->m_procInitFunc)
 		{
-			pSystem->procInitFunc();
+			pSystem->m_procInitFunc();
 		}
 
 		while (pSystem->m_bRenderRun)
 		{
-			pSystem->m_pVideo->Update();
+			pSystem->m_pVideo->Render();
 		}
 
-		if(pSystem->procExitFunc)
+		if(pSystem->m_procExitFunc)
 		{
-			pSystem->procExitFunc();
+			pSystem->m_procExitFunc();
 		}
 
 		pSystem->m_pVideo->Uninitialize();
@@ -322,27 +324,27 @@ namespace LF
 		{
 		case LFE_FRAMEFUNC:
 			{
-				procFrameFunc = value;
+				m_procFrameFunc = value;
 				break;
 			}
 		case LFE_RENDERFUNC:
 			{
-				procRenderFunc = value;
+				m_procRenderFunc = value;
 				break;
 			}
 		case LFE_VRESTOREFUNC:
 			{
-				procVideoRestoreFunc = value;
+				m_procVideoRestoreFunc = value;
 				break;
 			}
 		case LFE_EXITFUNC:
 			{
-				procExitFunc = value;
+				m_procExitFunc = value;
 				break;
 			}
 		case LFE_INITFUNC:
 			{
-				procInitFunc = value;
+				m_procInitFunc = value;
 				break;
 			}
 		}
@@ -400,6 +402,11 @@ namespace LF
 		}
 	}
 
+	void CLFE_System::SetMsgProcCallback(lfeMsgProcCallback pMsgProcCallback)
+	{
+		m_lpMsgProcCallback = pMsgProcCallback;
+	}
+
 	std::wstring CLFE_System::GetErrorMessage()
 	{
 		return m_strError;
@@ -411,22 +418,30 @@ namespace LF
 
 		if(m_bActive)
 		{
-			if(procFocusGainFunc)
+			if(m_procFocusGainFunc)
 			{
-				procFocusGainFunc();
+				m_procFocusGainFunc();
 			}
 		}
 		else
 		{
-			if(prceFocusLostFunc)
+			if(m_prceFocusLostFunc)
 			{
-				prceFocusLostFunc();
+				m_prceFocusLostFunc();
 			}
 		}
 	}
 
 	LRESULT CALLBACK CLFE_System::WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
+		if(pSystem->m_lpMsgProcCallback)
+		{
+			if(pSystem->m_lpMsgProcCallback(hwnd, msg, wParam, lParam))
+			{
+				return 0;
+			}
+		}
+
 		BOOL bActivating = FALSE;
 		switch(msg)
 		{

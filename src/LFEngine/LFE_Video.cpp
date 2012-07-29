@@ -67,7 +67,7 @@ namespace LF
 		return m_pD3DDevice;
 	}
 
-	BOOL CLFE_Video::Update()
+	BOOL CLFE_Video::Render()
 	{
 		static DWORD t0 = m_pTimer->GetTime();
 		static DWORD t0fps = t0;
@@ -94,17 +94,17 @@ namespace LF
 				m_nFPS=cfps; cfps=0; t0fps=t0;
 			}
 
-			if(pSystem->procFrameFunc)
+			if(pSystem->m_procFrameFunc)
 			{
-				if(!pSystem->procFrameFunc())
+				if(!pSystem->m_procFrameFunc())
 				{
 					return FALSE;
 				}
 			}
 
-			if(!pSystem->m_bMinimized && pSystem->procRenderFunc)
+			if(!pSystem->m_bMinimized && pSystem->m_procRenderFunc)
 			{
-				pSystem->procRenderFunc();
+				pSystem->m_procRenderFunc();
 			}
 			else
 			{
@@ -834,9 +834,9 @@ namespace LF
 			return FALSE;
 		}
 
-		if(pSystem->procVideoRestoreFunc) 
+		if(pSystem->m_procVideoRestoreFunc) 
 		{
-			return pSystem->procVideoRestoreFunc();
+			return pSystem->m_procVideoRestoreFunc();
 		}
 
 		return TRUE;

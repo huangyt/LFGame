@@ -49,7 +49,7 @@ namespace LF
 	private:
 		BOOL Initialize();
 		void Uninitialize();
-		BOOL Update();
+		BOOL Render();
 
 		BOOL init_lost();
 		BOOL VideoRestore();

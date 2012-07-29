@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="外部接口">
-      <UniqueIdentifier>{57d387b1-4c32-41f1-835b-fab67b8330c4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="系统">
       <UniqueIdentifier>{4d986e6f-8d1e-496a-812e-2d695c62c0ec}</UniqueIdentifier>
     </Filter>
@@ -12,9 +9,6 @@
     </Filter>
     <Filter Include="输入">
       <UniqueIdentifier>{e5126593-63b5-403a-9ce9-e4dfed418c42}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="图形">
-      <UniqueIdentifier>{5d059afb-cf66-459b-ae21-bb1f707fd4c5}</UniqueIdentifier>
     </Filter>
     <Filter Include="资源管理">
       <UniqueIdentifier>{277e6946-1a6e-436b-b212-02f4bb39f257}</UniqueIdentifier>
@@ -28,11 +22,11 @@
     <Filter Include="字符串处理">
       <UniqueIdentifier>{bede6b8d-dceb-4676-9e0a-ad037274772d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="图形">
+      <UniqueIdentifier>{57d387b1-4c32-41f1-835b-fab67b8330c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\include\LFEngine\LFEngine.h">
-      <Filter>外部接口</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_System.h">
       <Filter>系统</Filter>
     </ClInclude>
@@ -42,33 +36,28 @@
     <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_Input.h">
       <Filter>输入</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_Video.h">
-      <Filter>图形</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_ResManager.h">
       <Filter>资源管理</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_Timer.h">
       <Filter>时间</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_Texture.h">
+    <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_Log.h">
+      <Filter>日志</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_Video.h">
       <Filter>图形</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_Target.h">
       <Filter>图形</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_Log.h">
-      <Filter>日志</Filter>
+    <ClInclude Include="..\..\..\include\LFEngine\Private Header\LFE_Texture.h">
+      <Filter>图形</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\LFEngine\LFMath.h">
-      <Filter>外部接口</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\LFEngine\LFDefine.h">
-      <Filter>外部接口</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\LFEngine\LFString.h">
-      <Filter>外部接口</Filter>
-    </ClInclude>
+    <ClInclude Include="..\..\..\include\LFEngine\LFString.h" />
+    <ClInclude Include="..\..\..\include\LFEngine\LFDefine.h" />
+    <ClInclude Include="..\..\..\include\LFEngine\LFEngine.h" />
+    <ClInclude Include="..\..\..\include\LFEngine\LFMath.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\LFEngine\LFE_System.cpp">
@@ -80,26 +69,26 @@
     <ClCompile Include="..\..\..\src\LFEngine\LFE_Input.cpp">
       <Filter>输入</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\LFEngine\LFE_Video.cpp">
-      <Filter>图形</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\LFEngine\LFE_ResManager.cpp">
       <Filter>资源管理</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\LFEngine\LFE_Timer.cpp">
       <Filter>时间</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\LFEngine\LFE_Texture.cpp">
-      <Filter>图形</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\LFEngine\LFE_Target.cpp">
-      <Filter>图形</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\LFEngine\LFE_Log.cpp">
       <Filter>日志</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\LFEngine\LFE_String.cpp">
       <Filter>字符串处理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFEngine\LFE_Target.cpp">
+      <Filter>图形</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFEngine\LFE_Texture.cpp">
+      <Filter>图形</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFEngine\LFE_Video.cpp">
+      <Filter>图形</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

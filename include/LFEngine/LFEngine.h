@@ -45,6 +45,9 @@ namespace LF
 		virtual void				SetState(lfeBoolState state, bool value) = 0;
 		virtual void				SetState(lfeIntState state, int value) = 0;
 		virtual void				SetState(lfeStringState state, const std::wstring &value) = 0;
+
+		virtual void				SetMsgProcCallback(lfeMsgProcCallback pMsgProcCallback) = 0;
+
 	};
 
 	//Œ∆¿Ì

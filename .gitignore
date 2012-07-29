@@ -22,6 +22,9 @@
 /mk/LFServerLib/ipch
 /mk/LFServerLib/LFServerLib/Debug
 
+/mk/LFGui/ipch
+/mk/LFGui/LFGui/Debug
+
 /mk/ScriptEngine/ipch
 /mk/ScriptEngine/ScriptEngine/Debug
 
@@ -33,3 +36,4 @@
 /bin/LoginServer_d.exe
 /bin/LuaScriptDemo_d.exe
 /bin/ScriptEngine_d.lib
+/bin/LFGui_d.lib

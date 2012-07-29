@@ -33,44 +33,49 @@ namespace LF
 		virtual void			SetState(lfeIntState state, int value);
 		virtual void			SetState(lfeStringState state, const std::wstring &value);
 
+		virtual void			SetMsgProcCallback(lfeMsgProcCallback pMsgProcCallback);
+
 	public:
 		static  CLFE_System*	_Interface_Get();
 
 		void					FocusChange(BOOL bAct);
 	public:
-		HWND			m_hWnd;
-		HINSTANCE		m_hInstance;
+		HWND				m_hWnd;
+		HINSTANCE			m_hInstance;
 
-		std::wstring	m_strAppPath;
-		std::wstring	m_strIcon;
-		std::wstring	m_strWinTitle;
-		std::wstring	m_strError;
-		BOOL			m_bWindowed;
-		BOOL			m_bActive;
-		BOOL			m_bMinimized;
-		int				m_nScreenWidth;
-		int				m_nScreenHeight;
+		std::wstring		m_strAppPath;
+		std::wstring		m_strIcon;
+		std::wstring		m_strWinTitle;
+		std::wstring		m_strError;
+		BOOL				m_bWindowed;
+		BOOL				m_bActive;
+		BOOL				m_bMinimized;
+		int					m_nScreenWidth;
+		int					m_nScreenHeight;
 
 		//线程
-		volatile BOOL	m_bRenderRun;
-		HANDLE			m_hRenderThread;
+		volatile BOOL		m_bRenderRun;
+		HANDLE				m_hRenderThread;
 		static unsigned __stdcall RenderThreadFunction(LPVOID pThreadData);
 
 		//外调函数
-		lfeCallback		procInitFunc;
-		lfeCallback		procFrameFunc;
-		lfeCallback		procRenderFunc;
-		lfeCallback		prceFocusLostFunc;
-		lfeCallback		procFocusGainFunc;
-		lfeCallback		procVideoRestoreFunc;
-		lfeCallback		procExitFunc;
+		lfeCallback			m_procInitFunc;
+		lfeCallback			m_procFrameFunc;
+		lfeCallback			m_procRenderFunc;
+		lfeCallback			m_prceFocusLostFunc;
+		lfeCallback			m_procFocusGainFunc;
+		lfeCallback			m_procVideoRestoreFunc;
+		lfeCallback			m_procExitFunc;
+
+		lfeMsgProcCallback	m_lpMsgProcCallback;
+
 		//窗口模式信息
-		RECT			m_rectW;
-		LONG			m_styleW;
+		RECT				m_rectW;
+		LONG				m_styleW;
 
 		//全屏模式数据
-		RECT			m_rectFS;
-		LONG			m_styleFS;
+		RECT				m_rectFS;
+		LONG				m_styleFS;
 
 		//内部指针
 		CLFE_Video*			m_pVideo;
