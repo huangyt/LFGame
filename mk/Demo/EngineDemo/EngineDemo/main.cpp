@@ -1,8 +1,12 @@
 #include "LFEngine.h"
+#include "LFGui.h"
 
 using namespace LF;
+using namespace LFG;
 
 CLFEngine*				pEngine			= NULL;
+CLFGui*					pGui			= NULL;
+
 CLFVideo*				pVideo			= NULL;
 CLFResManager*			pResManager		= NULL;
 CLFInput*				pInput			= NULL;
@@ -136,7 +140,7 @@ BOOL InitFunc()
 
 BOOL MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-	return FALSE;
+	return pGui->MsgProc(hwnd, msg, wParam, lParam);
 }
 
 INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int)
@@ -150,6 +154,7 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int)
 		InputEvent event;
 
 		pEngine = CLFEngine::CreateEngine();
+		pGui = CLFGui::CreateGui();
 
 		pEngine->SetState(LFE_INITFUNC, InitFunc);
 		pEngine->SetState(LFE_FRAMEFUNC, FrameFunc);
@@ -175,14 +180,13 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int)
 
 		pEngine->ShutDown();
 
+		SAFE_RELEASE(pGui);
 		SAFE_RELEASE(pEngine);
 	}
 	catch(...)
 	{
-		if(pEngine)
-		{
-			SAFE_RELEASE(pEngine);
-		}
+		SAFE_RELEASE(pGui);
+		SAFE_RELEASE(pEngine);
 	}
 	return 0;
 }
