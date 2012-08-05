@@ -154,7 +154,7 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int)
 		InputEvent event;
 
 		pEngine = CLFEngine::CreateEngine();
-		pGui = CLFGui::CreateGui();
+		pGui = new CLFGui;
 
 		pEngine->SetState(LFE_INITFUNC, InitFunc);
 		pEngine->SetState(LFE_FRAMEFUNC, FrameFunc);
@@ -180,12 +180,12 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int)
 
 		pEngine->ShutDown();
 
-		SAFE_RELEASE(pGui);
+		SAFE_DELETE(pGui);
 		SAFE_RELEASE(pEngine);
 	}
 	catch(...)
 	{
-		SAFE_RELEASE(pGui);
+		SAFE_DELETE(pGui);
 		SAFE_RELEASE(pEngine);
 	}
 	return 0;

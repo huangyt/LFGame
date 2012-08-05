@@ -46,7 +46,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../../../include/LFGui;../../../include/LFGui/Private Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../include/LFGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -67,10 +67,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\LFGui\LFGui.h" />
-    <ClInclude Include="..\..\..\include\LFGui\Private Header\LFG_System.h" />
+    <ClInclude Include="..\..\..\include\LFGui\LFGuiElement.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\LFGui\LFG_System.cpp" />
+    <ClCompile Include="..\..\..\src\LFGui\LFGui.cpp" />
+    <ClCompile Include="..\..\..\src\LFGui\LFGuiElement.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
