@@ -10,6 +10,7 @@ namespace LFG
 		PROPERTY_STRING = 3
 	};
 
+	//非线程安全
 	class CLFGuiElement
 	{
 	public:
