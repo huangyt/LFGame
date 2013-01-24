@@ -96,6 +96,9 @@
     <ClInclude Include="..\..\..\include\LFServerLib\BigNumber.h">
       <Filter>加密</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\include\LFServerLib\MemPool.h">
+      <Filter>内存池</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\LFServerLib\TcpSocket.cpp">
@@ -139,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\src\LFServerLib\BigNumber.cpp">
       <Filter>加密</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\LFServerLib\MemPool.cpp">
+      <Filter>内存池</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
